@@ -5,10 +5,10 @@ import {url}  from '../config.json';
 @Injectable({
   providedIn: 'root'
 })
-export class SubitemService {
+export class ItemService {
 
   subitens: [];
-  url: string = `${url}/subitens`;
+  url: string = `${url}/itens`;
 
   constructor(private http: HttpClient) { }
 
@@ -33,4 +33,5 @@ export class SubitemService {
     console.log(body);
     return this.http.delete(`${this.url}/${body.id}`, body);
   }
+
 }

@@ -53,7 +53,7 @@ export class SubitemComponent implements OnInit {
   }
 
   openModalEditar(data: any): void {
-    const dialogRef = this.dialog.open(DialogEditar, {
+    const dialogRef = this.dialog.open(DialogEditarSubitem, {
       width: '250px',
       data
     });
@@ -64,7 +64,7 @@ export class SubitemComponent implements OnInit {
   }
 
   openModalDeletar(data: any): void {
-    const dialogRef = this.dialog.open(DialogDeletar, {
+    const dialogRef = this.dialog.open(DialogDeletarSubitem, {
       width: '250px',
       data
     });
@@ -105,7 +105,7 @@ export class DialogComponent {
   selector: 'modal-editar',
   templateUrl: 'modalEditar.html',
 })
-export class DialogEditar {
+export class DialogEditarSubitem {
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
@@ -130,7 +130,7 @@ export class DialogEditar {
   selector: 'modal-cadastro',
   templateUrl: 'modalDeletar.html',
 })
-export class DialogDeletar {
+export class DialogDeletarSubitem {
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,

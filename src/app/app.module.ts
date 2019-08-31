@@ -13,17 +13,20 @@ import { environment } from '../environments/environment';
 import { SubitemComponent } from './components/subitem/subitem.component';
 import { SubitemService } from './services/subitem/subitem.service';
 import { DialogComponent } from './components/subitem/subitem.component';
-import { DialogEditar } from './components/subitem/subitem.component';
-import { DialogDeletar } from './components/subitem/subitem.component';
+import { DialogEditarSubitem } from './components/subitem/subitem.component';
+import { DialogDeletarSubitem } from './components/subitem/subitem.component';
 import { FormsModule }   from '@angular/forms';
+import { ItemComponent, DialogCadastrarItem } from './components/item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SubitemComponent,
     DialogComponent,
-    DialogEditar,
-    DialogDeletar,
+    DialogEditarSubitem,
+    DialogDeletarSubitem,
+    ItemComponent,
+    DialogCadastrarItem,
   ],
   imports: [
     BrowserModule,
@@ -39,8 +42,9 @@ import { FormsModule }   from '@angular/forms';
   bootstrap: [AppComponent],
   entryComponents: [
     DialogComponent,
-    DialogEditar,
-    DialogDeletar,
+    DialogEditarSubitem,
+    DialogDeletarSubitem,
+    DialogCadastrarItem
   ]
 })
 export class AppModule { }
