@@ -6,13 +6,21 @@ import Item from '../../models/item';
 import { SubitemService } from '../../services/subitem/subitem.service';
 import Subitem from '../../models/Subitem';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 export interface DialogData {
   id: number;
   nome: string;
   subitens: [];
 }
+
+var selectedItem: Item;
+var subitens: Subitem[];
+var selSubitens: Subitem[];
+var subitensFiltrados: Subitem[];
+var itemForm = new FormGroup({
+  nome: new FormControl(''),
+})
 
 @Component({
   selector: 'app-item',
@@ -28,21 +36,16 @@ export interface DialogData {
 })
 export class ItemComponent implements OnInit {
 
-  subitens: Subitem[];
   itens: Item[];
   dataSource: any;
   nome: string;
-  selSubitens: Subitem[];
 
   constructor(private itemService: ItemService, private subitemService: SubitemService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog, private fb: FormBuilder) { }
   
   displayedColumns: string[] = ['position', 'name', 'subitens', 'actions'];
   expandedElement: Item | null;
-  itemForm = new FormGroup({
-    nome: new FormControl(''),
-    subitens: new FormControl([]),
-  })
+
   
   ngOnInit() {
     this.getItens();
@@ -61,8 +64,8 @@ export class ItemComponent implements OnInit {
   getSubitens() {
     this.subitemService.getAll()
     .subscribe((data: Item[]) => {
-      this.subitens = data;
-      console.log(this.subitens);
+      subitens = data;
+      console.log(subitens);
     });
   }
 
@@ -73,36 +76,57 @@ export class ItemComponent implements OnInit {
   openModalCadastrar(): void {
     const dialogRef = this.dialog.open(DialogCadastrarItem, {
       width: '50%',
-      data: {nome: this.nome, subitens: this.subitens, selSubitens: this.selSubitens, form: this.itemForm}
+      data: {nome: this.nome, subitens: subitens, selSubitens: selSubitens, form: itemForm}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getSubitens(); 
-      console.log(this.itemForm.value);
+      this.getItens(); 
     });
   }
 
-  /*openModalEditar(data: any): void {
-    const dialogRef = this.dialog.open(DialogEditar, {
-      width: '250px',
-      data
+  buildValues(data: Subitem[]) {
+    subitensFiltrados = [];
+    for(let item of subitens){
+      let boo = false
+      for(let i of data){
+        if (item.id === i.id){
+          boo = true
+        }
+      }
+      if(!boo){
+        subitensFiltrados.push(item);
+      }
+    }
+  }
+
+  openModalEditar(data: Item): void {
+    selectedItem = data;
+    this.buildValues(data.subitens)
+    itemForm = this.fb.group({
+      nome: this.fb.control(data.nome),
+    })
+    console.log(itemForm.controls);
+    const dialogRef = this.dialog.open(DialogEditarItem, {
+      width: '80%',
+      data: {subitens: subitensFiltrados, selecteds: data.subitens, form: itemForm}
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.getItens();
       this.getSubitens(); 
     });
   }
 
   openModalDeletar(data: any): void {
-    const dialogRef = this.dialog.open(DialogDeletar, {
+    const dialogRef = this.dialog.open(DialogDeletarItem, {
       width: '250px',
       data
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getSubitens(); 
+      this.getItens(); 
     });
-  }*/
+  }
   
 }
 
@@ -130,3 +154,68 @@ export class DialogCadastrarItem {
   }
 
 }
+
+@Component({
+  selector: 'modal-editar',
+  templateUrl: 'modalEditar.html',
+})
+export class DialogEditarItem {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogEditarItem>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private itemService: ItemService) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  onClick(): void {
+    console.log('$$$$$$$$$$$$$$$$$');
+    selectedItem.nome = itemForm.value.nome;
+    this.itemService.put(selectedItem)
+    .subscribe((data: Subitem[]) => {
+      console.log(data);
+    })
+    this.dialogRef.close();
+  }
+
+  adiciona(index: number) {
+    let sub: Subitem; 
+    sub = subitensFiltrados[index]
+    selectedItem.subitens.push(sub);
+    subitensFiltrados.splice(index, 1);
+  }
+
+  retorna(index: number) {
+    subitensFiltrados.push(selectedItem.subitens[index])
+    selectedItem.subitens.splice(index, 1);
+  }
+
+}
+
+
+@Component({
+  selector: 'modal-cadastro',
+  templateUrl: 'modalDeletar.html',
+})
+export class DialogDeletarItem {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogDeletarItem>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private itemService: ItemService) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  onClick(data: {}): void {
+    console.log(data);
+    this.itemService.delete(data)
+    .subscribe((data: any) => {
+      console.log(this.data);
+    })
+    this.dialogRef.close();
+  }
+
+}
+

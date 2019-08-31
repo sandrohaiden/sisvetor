@@ -3,8 +3,8 @@ width: 100%;
 }
 
 .mat-form-field {
-font-size: 14px;
-width: 100%;
+  font-size: 14px;
+  width: 100%;
 }
 
 tr.example-detail-row {
@@ -34,10 +34,10 @@ tr.example-element-row:not(.example-expanded-row):active {
   line-height: normal;
 }
 
-.example-element-description {
-  padding: 16px;
-}
-
 .example-element-description-attribution {
   opacity: 0.5;
+}
+
+.mat-cell {
+  padding: 0 0 0 0
 }

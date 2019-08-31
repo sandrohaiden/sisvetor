@@ -16,7 +16,7 @@ import { DialogComponent } from './components/subitem/subitem.component';
 import { DialogEditarSubitem } from './components/subitem/subitem.component';
 import { DialogDeletarSubitem } from './components/subitem/subitem.component';
 import { FormsModule }   from '@angular/forms';
-import { ItemComponent, DialogCadastrarItem } from './components/item/item.component';
+import { ItemComponent, DialogCadastrarItem, DialogEditarItem, DialogDeletarItem } from './components/item/item.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,8 @@ import { ItemComponent, DialogCadastrarItem } from './components/item/item.compo
     DialogDeletarSubitem,
     ItemComponent,
     DialogCadastrarItem,
+    DialogEditarItem,
+    DialogDeletarItem,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,9 @@ import { ItemComponent, DialogCadastrarItem } from './components/item/item.compo
     DialogComponent,
     DialogEditarSubitem,
     DialogDeletarSubitem,
-    DialogCadastrarItem
+    DialogCadastrarItem,
+    DialogEditarItem,
+    DialogDeletarItem,
   ]
 })
 export class AppModule { }

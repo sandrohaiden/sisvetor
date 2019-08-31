@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Editar Item</h1>
+<form [formGroup]="data.form">
+  
+  <mat-form-field style="width: 100%">
+    <mat-label>Digite o nome do item</mat-label>
+    <input matInput formControlName="nome">
+  </mat-form-field>
+  <!-- <mat-form-field style="width: 100%">
+    <mat-label>Toppings</mat-label>
+    <mat-select formArrayName="subitens" multiple>
+      <mat-option *ngFor="let topping of data.subitens; let i = index" [value]="topping">{{topping.nome}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+ -->
+</form>
+
+<mat-chip-list style="width: 100%">
+  <span *ngFor="let item of data.subitens; let i = index">
+    <mat-chip (click)="adiciona(i)">{{item.nome}}</mat-chip>
+  </span>
+</mat-chip-list>
+
+<h5 mat-dialog-title>Subitens Selecionados</h5>
+<mat-divider></mat-divider>
+<br>
+<mat-chip-list style="width: 100%">
+  <span *ngFor="let item of data.selecteds; let i = index">
+    <mat-chip (click)="retorna(i)">{{item.nome}}</mat-chip>
+  </span>
+</mat-chip-list>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="onClick(data.form.value)" cdkFocusInitial>Ok</button>
+</div>
