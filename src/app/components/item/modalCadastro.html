@@ -16,7 +16,7 @@
   
   <p>Digite o nome do item</p>
   <mat-form-field>
-    <input matInput formControlName="nomeItem">
+    <input matInput formControlName="nome">
   </mat-form-field>
   <br>
   <mat-label>Toppings</mat-label>
@@ -28,5 +28,5 @@
 
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button (click)="onClick(data)" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onClick(data.form.value)" cdkFocusInitial>Ok</button>
 </div>

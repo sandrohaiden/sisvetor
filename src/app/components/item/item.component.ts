@@ -40,7 +40,7 @@ export class ItemComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'subitens', 'actions'];
   expandedElement: Item | null;
   itemForm = new FormGroup({
-    nomeItem: new FormControl(''),
+    nome: new FormControl(''),
     subitens: new FormControl([]),
   })
   
@@ -78,6 +78,7 @@ export class ItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getSubitens(); 
+      console.log(this.itemForm.value);
     });
   }
 
@@ -113,7 +114,7 @@ export class DialogCadastrarItem {
 
   constructor(
     public dialogRef: MatDialogRef<DialogCadastrarItem>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData, private subitemService: SubitemService) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData, private itemService: ItemService) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -121,7 +122,7 @@ export class DialogCadastrarItem {
 
   onClick(data: {}): void {
     console.log(data);
-    this.subitemService.post(data)
+    this.itemService.post(data)
     .subscribe((data: Subitem[]) => {
       console.log(this.data);
     })
