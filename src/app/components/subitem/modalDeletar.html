@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Excluir Subitem</h1>
+<div mat-dialog-content>
+  <p>Tem certeza que quer excluir o subitem {{data.nome}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Não</button>
+  <button mat-button (click)="onClick(data)" cdkFocusInitial>Sim</button>
+</div>

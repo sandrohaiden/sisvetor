@@ -13,6 +13,8 @@ import { environment } from '../environments/environment';
 import { SubitemComponent } from './components/subitem/subitem.component';
 import { SubitemService } from './services/subitem/subitem.service';
 import { DialogComponent } from './components/subitem/subitem.component';
+import { DialogEditar } from './components/subitem/subitem.component';
+import { DialogDeletar } from './components/subitem/subitem.component';
 import { FormsModule }   from '@angular/forms';
 
 @NgModule({
@@ -20,6 +22,8 @@ import { FormsModule }   from '@angular/forms';
     AppComponent,
     SubitemComponent,
     DialogComponent,
+    DialogEditar,
+    DialogDeletar,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { FormsModule }   from '@angular/forms';
   providers: [SubitemService],
   bootstrap: [AppComponent],
   entryComponents: [
-    DialogComponent
+    DialogComponent,
+    DialogEditar,
+    DialogDeletar,
   ]
 })
 export class AppModule { }
