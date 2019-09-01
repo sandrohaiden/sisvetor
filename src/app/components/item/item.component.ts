@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import { ItemService } from '../../services/item/item.service';
-import Item from '../../models/item';
+import Item from '../../models/Item';
 import { SubitemService } from '../../services/subitem/subitem.service';
 import Subitem from '../../models/Subitem';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
