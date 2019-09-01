@@ -5,8 +5,7 @@ import { SubitemService } from '../../services/subitem/subitem.service';
 import Subitem from '../../models/Subitem';
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  nome: string
 }
 
 @Component({

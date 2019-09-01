@@ -10,8 +10,8 @@ import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 export interface DialogData {
   id: number;
-  nome: string;
-  subitens: [];
+  form: FormGroup;
+  selecteds: Subitem[]
 }
 
 var selectedItem: Item;
