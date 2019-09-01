@@ -6,6 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Conexão com o Back End
+
+Caso esteja rodando o back end deste [reposiório](https://github.com/sandrohc2010/sisvetor-api) na mesma máquina do front, basta iniciar ambos, caso execute-os em máquinas diferentes, o ip da back end deverá ser corretamente informado em src/app/services/config.json
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
