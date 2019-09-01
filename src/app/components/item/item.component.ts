@@ -18,7 +18,7 @@ export interface DialogData {
 
 var selectedItem: Item;
 var subitens: Subitem[];
-var selSubitens: Subitem[];
+var selSubitens: Subitem[] = [];
 var subitensFiltrados: Subitem[];
 var itemForm = new FormGroup({
   nome: new FormControl(''),
@@ -76,12 +76,14 @@ export class ItemComponent implements OnInit {
   }
 
   openModalCadastrar(): void {
+    this.buildValues([])
     const dialogRef = this.dialog.open(DialogCadastrarItem, {
       width: '50%',
-      data: {nome: this.nome, subitens: subitens, selSubitens: selSubitens, form: itemForm}
+      data: {nome: this.nome, subitens: subitensFiltrados, selecteds: selSubitens, form: itemForm}
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      selSubitens = [];
       this.getItens(); 
     });
   }
@@ -146,8 +148,22 @@ export class DialogCadastrarItem {
     this.dialogRef.close();
   }
 
-  onClick(data: {}): void {
+  adiciona(index: number) {
+    let sub: Subitem; 
+    sub = subitensFiltrados[index]
+    console.log(sub);
+    selSubitens.push(sub);
+    subitensFiltrados.splice(index, 1);
+  }
+
+  retorna(index: number) {
+    subitensFiltrados.push(selSubitens[index])
+    selSubitens.splice(index, 1);
+  }
+
+  onClick(data: Item): void {
     console.log(data);
+    data.subitens = selSubitens
     this.itemService.post(data)
     .subscribe((data: Subitem[]) => {
       console.log(this.data);
