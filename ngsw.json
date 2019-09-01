@@ -1,0 +1,78 @@
+{
+  "configVersion": 1,
+  "timestamp": 1567299641029,
+  "index": "https://sandrohc2010.github.io/sisvetor/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://sandrohc2010.github.io/sisvetor/favicon.ico",
+        "https://sandrohc2010.github.io/sisvetor/index.html",
+        "https://sandrohc2010.github.io/sisvetor/main-es2015.3ccf99c72840be41f6db.js",
+        "https://sandrohc2010.github.io/sisvetor/main-es5.c076f07c32b36678db55.js",
+        "https://sandrohc2010.github.io/sisvetor/polyfills-es2015.27661dfa98f6332c27dc.js",
+        "https://sandrohc2010.github.io/sisvetor/polyfills-es5.7f43b971448d2fb49202.js",
+        "https://sandrohc2010.github.io/sisvetor/runtime-es2015.858f8dd898b75fe86926.js",
+        "https://sandrohc2010.github.io/sisvetor/runtime-es5.741402d1d47331ce975c.js",
+        "https://sandrohc2010.github.io/sisvetor/styles.9b7bf9affada55991f50.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-128x128.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-144x144.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-152x152.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-192x192.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-384x384.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-512x512.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-72x72.png",
+        "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://sandrohc2010.github.io/sisvetor/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://sandrohc2010.github.io/sisvetor/index.html": "5ca90660e28a64037d26c8f305b700550ade0f31",
+    "https://sandrohc2010.github.io/sisvetor/main-es2015.3ccf99c72840be41f6db.js": "2769d6189ee8cb361bc27715d302238c9feda092",
+    "https://sandrohc2010.github.io/sisvetor/main-es5.c076f07c32b36678db55.js": "74102f6af7f7e26a73c06b76edc1b29a3afaf4c5",
+    "https://sandrohc2010.github.io/sisvetor/polyfills-es2015.27661dfa98f6332c27dc.js": "77f974dd2b186031cfc4f4526d96db4efcd39353",
+    "https://sandrohc2010.github.io/sisvetor/polyfills-es5.7f43b971448d2fb49202.js": "f84a71ef6c7a788b5fe701bf2405313d7766a66d",
+    "https://sandrohc2010.github.io/sisvetor/runtime-es2015.858f8dd898b75fe86926.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://sandrohc2010.github.io/sisvetor/runtime-es5.741402d1d47331ce975c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://sandrohc2010.github.io/sisvetor/styles.9b7bf9affada55991f50.css": "3894c305c235a35264815aa8fa310fbcd43c268c"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
