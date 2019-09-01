@@ -13,6 +13,7 @@ export interface DialogData {
   form: FormGroup;
   selecteds: Subitem[];
   subitens: Subitem[];
+  nome: string;
 }
 
 var selectedItem: Item;
