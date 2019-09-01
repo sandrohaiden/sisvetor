@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1567316185666,
+  "timestamp": 1567317831011,
   "index": "https://sandrohc2010.github.io/sisvetor/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://sandrohc2010.github.io/sisvetor/favicon.ico",
         "https://sandrohc2010.github.io/sisvetor/index.html",
-        "https://sandrohc2010.github.io/sisvetor/main-es2015.e05292d03a748f314d65.js",
-        "https://sandrohc2010.github.io/sisvetor/main-es5.481429bb10b7b4d49d63.js",
+        "https://sandrohc2010.github.io/sisvetor/main-es2015.9d3794ce426b6ece9beb.js",
+        "https://sandrohc2010.github.io/sisvetor/main-es5.161c7f69868a94f1df44.js",
         "https://sandrohc2010.github.io/sisvetor/polyfills-es2015.27661dfa98f6332c27dc.js",
         "https://sandrohc2010.github.io/sisvetor/polyfills-es5.7f43b971448d2fb49202.js",
         "https://sandrohc2010.github.io/sisvetor/runtime-es2015.858f8dd898b75fe86926.js",
@@ -48,9 +48,9 @@
     "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://sandrohc2010.github.io/sisvetor/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://sandrohc2010.github.io/sisvetor/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://sandrohc2010.github.io/sisvetor/index.html": "0d417111c161e53b86930e1f3f58a2ee5507d873",
-    "https://sandrohc2010.github.io/sisvetor/main-es2015.e05292d03a748f314d65.js": "4a36f509ddc66ae2bcba35e6788432b21bf7e90b",
-    "https://sandrohc2010.github.io/sisvetor/main-es5.481429bb10b7b4d49d63.js": "4bac71e245b01e34e56d513dd1f2d9d18e64bea1",
+    "https://sandrohc2010.github.io/sisvetor/index.html": "40fb6c706b4b9ad1406932b8da0b78abe6119315",
+    "https://sandrohc2010.github.io/sisvetor/main-es2015.9d3794ce426b6ece9beb.js": "0ce60a62e79c69d05ea62f39b957e0723eebdb7f",
+    "https://sandrohc2010.github.io/sisvetor/main-es5.161c7f69868a94f1df44.js": "ac014e56f09ed0a70979b4d199256aa07b2f44d0",
     "https://sandrohc2010.github.io/sisvetor/polyfills-es2015.27661dfa98f6332c27dc.js": "77f974dd2b186031cfc4f4526d96db4efcd39353",
     "https://sandrohc2010.github.io/sisvetor/polyfills-es5.7f43b971448d2fb49202.js": "f84a71ef6c7a788b5fe701bf2405313d7766a66d",
     "https://sandrohc2010.github.io/sisvetor/runtime-es2015.858f8dd898b75fe86926.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
