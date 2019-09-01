@@ -78,8 +78,6 @@ THE SOFTWARE.
 
 @angular/material/list
 
-@angular/material/select
-
 @angular/material/table
 
 @angular/material/toolbar
