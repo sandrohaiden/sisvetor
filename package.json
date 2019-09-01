@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/pwa": "^0.803.1",
     "@angular/router": "~8.0.3",
     "@angular/service-worker": "~8.0.3",
+    "push-dir": "^0.4.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
