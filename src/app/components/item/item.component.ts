@@ -11,7 +11,8 @@ import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 export interface DialogData {
   id: number;
   form: FormGroup;
-  selecteds: Subitem[]
+  selecteds: Subitem[];
+  subitens: Subitem[];
 }
 
 var selectedItem: Item;
