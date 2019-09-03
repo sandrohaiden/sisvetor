@@ -32,7 +32,7 @@ export class ItemService {
   delete(body: Item){
     console.log("Esse é o body:" + body);
     console.log(body);
-    return this.http.delete(`${this.url}/${body.id}`, body);
+    return this.http.delete(`${this.url}/${body.id}`);
   }
 
   findByNome(nome: string){
