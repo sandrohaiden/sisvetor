@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {MatTableDataSource} from '@angular/material/table';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 import { SubitemService } from '../../services/subitem/subitem.service';
 import Subitem from '../../models/Subitem';
 import { ModalCadastrarSubitemComponent } from './modal-cadastrar-subitem/modal-cadastrar-subitem.component';
@@ -14,7 +15,14 @@ export interface DialogData {
 @Component({
   selector: 'app-subitem',
   templateUrl: './subitem.component.html',
-  styleUrls: ['./subitem.component.css']
+  styleUrls: ['./subitem.component.css'],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 
 export class SubitemComponent implements OnInit {
