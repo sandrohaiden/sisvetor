@@ -3,6 +3,15 @@
     <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
   </button>
 </div>
+
+<div>
+  <mat-form-field>
+    <input matInput [(ngModel)]='nome' (keyup)='press($event.target.value)' (keyup.enter)='findByNome()' placeholder="Pesquisar por Nome">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)='findByNome()'>Pesquisar</button>
+</div>
+
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
@@ -24,8 +33,8 @@
   <!-- Name Column -->
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef style="text-align: center"> Ações </th>
-    <td mat-cell *matCellDef="let element">
-      <mat-grid-list cols="2" rowHeight="9:3">
+    <td mat-cell *matCellDef="let element" style="width: 20%">
+      <mat-grid-list cols="2" rowHeight="5:3">
         <mat-grid-tile>
           <button mat-button matTooltip="Editar Subitem" color="primary" (click)="openModalEditar(element)">
             <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>

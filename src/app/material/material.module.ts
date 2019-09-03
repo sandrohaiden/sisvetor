@@ -13,6 +13,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -31,6 +32,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MatGridListModule,
     MatSelectModule,
     MatChipsModule,
+    MatSnackBarModule,
   ],
   exports: [MatButtonModule,
             MatCheckboxModule,
@@ -45,6 +47,7 @@ import {MatChipsModule} from '@angular/material/chips';
             MatGridListModule,
             MatSelectModule,
             MatChipsModule,
+            MatSnackBarModule,
           ],
 })
 export class MaterialModule { }

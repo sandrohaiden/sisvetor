@@ -33,4 +33,8 @@ export class SubitemService {
     console.log(body);
     return this.http.delete(`${this.url}/${body.id}`, body);
   }
+  
+  findByNome(nome: string){
+    return this.http.get(`${this.url}/search?nome=${nome}`);
+  }
 }

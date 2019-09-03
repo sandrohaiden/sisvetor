@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Editar Item</h1>
-<form [formGroup]="data.form">
+<form [formGroup]="form">
   
   <mat-form-field style="width: 100%">
     <mat-label>Digite o nome do item</mat-label>
@@ -7,19 +7,25 @@
   </mat-form-field>
 </form>
 
+<h5 mat-dialog-title>Subitens Disponíveis</h5>
+<mat-divider></mat-divider>
+<br>
 <mat-chip-list style="width: 100%">
-  <span *ngFor="let item of data.subitens; let i = index">
+  <span *ngFor="let item of subitensFiltrados; let i = index">
     <mat-chip (click)="adiciona(i)">{{item.nome}}</mat-chip>
   </span>
+  <span *ngIf="subitensFiltrados.length === 0" >Nenhum subitem disponível</span>
 </mat-chip-list>
+<br>
 
 <h5 mat-dialog-title>Subitens Selecionados</h5>
 <mat-divider></mat-divider>
 <br>
 <mat-chip-list style="width: 100%">
-  <span *ngFor="let item of data.selecteds; let i = index">
-    <mat-chip (click)="retorna(i)">{{item.nome}}</mat-chip>
+  <span *ngFor="let item of data.selected.subitens; let i = index">
+    <mat-chip (click)="retorna(i)" style="background-color: #4CAF50" selected>{{item.nome}}</mat-chip>
   </span>
+  <span *ngIf="data.selected.subitens.length === 0" >Nenhum subitem foi selecionado</span>
 </mat-chip-list>
 
 <div mat-dialog-actions>
