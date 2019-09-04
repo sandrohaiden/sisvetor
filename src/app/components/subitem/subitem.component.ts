@@ -35,7 +35,7 @@ export class SubitemComponent implements OnInit {
   constructor(private subitemService: SubitemService, private dialog: MatDialog) { }
 
   async ngOnInit(){
-    this.getSubitens(); 
+    this.getSubitens();
   }
 
   getSubitens() {
@@ -61,10 +61,6 @@ export class SubitemComponent implements OnInit {
     })
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
   openModalCadastrar(): void {
     const dialogRef = this.dialog.open(ModalCadastrarSubitemComponent, {
       width: '250px',
@@ -72,7 +68,7 @@ export class SubitemComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getSubitens(); 
+      this.getSubitens();
     });
   }
 
@@ -83,7 +79,7 @@ export class SubitemComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getSubitens(); 
+      this.getSubitens();
     });
   }
 
@@ -94,7 +90,7 @@ export class SubitemComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getSubitens(); 
+      this.getSubitens();
     });
   }
 

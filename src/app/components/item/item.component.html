@@ -1,3 +1,7 @@
+<div class="mat-display-2" style="text-align: center">
+  Gerenciar Itens
+</div>
+
 <div>
     <button mat-fab matTooltip="Cadastrar Item" (click)="openModalCadastrar()" matTooltipPosition="right"
         color="primary">
@@ -12,10 +16,6 @@
 
     <button mat-raised-button color="primary" (click)='findByNome()'>Pesquisar</button>
 </div>
-
-<mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
 
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
     <!-- Position Column -->
@@ -65,6 +65,9 @@
                         <mat-list role="list" *ngFor="let item of element.subitens">
                             <mat-list-item role="listitem">{{item.nome}}</mat-list-item>
                         </mat-list>
+                        <span *ngIf="element.subitens.length === 0">
+                          Não existe Subitens associados.
+                        </span>
                     </div>
                 </div>
             </div>

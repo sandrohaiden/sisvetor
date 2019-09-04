@@ -1,3 +1,7 @@
+<div class="mat-display-2" style="text-align: center">
+  Gerenciar Subitens
+</div>
+
 <div>
   <button mat-fab matTooltip="Cadastrar Subitem" (click)="openModalCadastrar()" matTooltipPosition="right" color="primary">
     <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
@@ -11,10 +15,6 @@
 
   <button mat-raised-button color="primary" (click)='findByNome()'>Pesquisar</button>
 </div>
-
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-</mat-form-field>
 
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
 
@@ -45,7 +45,7 @@
             <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
           </button>
         </mat-grid-tile>
-      </mat-grid-list> 
+      </mat-grid-list>
     </td>
   </ng-container>
 
@@ -59,6 +59,9 @@
                       <mat-list role="list" *ngFor="let item of element.itens">
                           <mat-list-item role="listitem">{{item.nome}}</mat-list-item>
                       </mat-list>
+                      <span *ngIf="element.itens.length === 0">
+                        Não existe Itens associados.
+                      </span>
                   </div>
               </div>
           </div>

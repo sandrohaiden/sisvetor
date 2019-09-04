@@ -48,11 +48,11 @@ export class ItemComponent implements OnInit {
 
   constructor(private itemService: ItemService, private subitemService: SubitemService,
               private dialog: MatDialog, private fb: FormBuilder) { }
-  
+
   displayedColumns: string[] = ['position', 'name', 'subitens', 'actions'];
   expandedElement: Item | null;
 
-  
+
   ngOnInit() {
     this.getItens();
     this.getSubitens();
@@ -89,10 +89,6 @@ export class ItemComponent implements OnInit {
     })
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
   openModalCadastrar(): void {
     const dialogRef = this.dialog.open(ModalCadastrarItemComponent, {
       width: '50%',
@@ -101,7 +97,7 @@ export class ItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       selSubitens = [];
-      this.getItens(); 
+      this.getItens();
     });
   }
 
@@ -120,7 +116,7 @@ export class ItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.getItens();
-      this.getSubitens(); 
+      this.getSubitens();
     });
   }
 
@@ -131,8 +127,8 @@ export class ItemComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getItens(); 
+      this.getItens();
     });
   }
-  
+
 }

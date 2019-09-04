@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Editar Item</h1>
 <form [formGroup]="form">
-  
+
   <mat-form-field style="width: 100%">
     <mat-label>Digite o nome do item</mat-label>
     <input matInput formControlName="nome">
@@ -30,5 +30,5 @@
 
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button (click)="onClick()" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onClick()" cdkFocusInitial>Salvar</button>
 </div>

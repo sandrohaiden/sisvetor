@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Cadastrar Subitem</h1>
+<h1 mat-dialog-title>Cadastrar Item</h1>
 <form [formGroup]="form">
   <mat-form-field style="width: 100%">
     <mat-label>Digite o nome do item</mat-label>
@@ -29,5 +29,5 @@
 
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button (click)="onClick(form.value)" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onClick(form.value)" cdkFocusInitial>Salvar</button>
 </div>
